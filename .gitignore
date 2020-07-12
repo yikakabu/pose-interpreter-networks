@@ -4,6 +4,8 @@
 *.rdb
 .ipynb_checkpoints
 cache
+coco/
+*/pypcd/
 data/*Dataset/
 data/test/
 .vscode/
