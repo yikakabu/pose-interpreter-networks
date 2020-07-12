@@ -1,0 +1,25 @@
+data:
+    root: ../data/ChargePileDataset
+    ann_file: 20190323_ChargePile.json
+    train_all: false
+    batch_size: 16
+    workers: 4
+    classes: 2
+    class_names: [
+        background,
+        charge_pile
+    ]
+arch: drn_d_22
+optimizer:
+    lr: 0.001
+    momentum: 0.99
+    weight_decay: 0.0001
+training:
+    logs_dir: logs/
+    checkpoints_dir: checkpoints/
+    experiment_name: drn_d_22_ChargePile
+    print_freq: 10
+    checkpoint_epochs: 50
+    epochs: 1000
+    log_dir:
+    resume:

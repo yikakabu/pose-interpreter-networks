@@ -13,27 +13,23 @@ def accuracy(output, target):
 
 
 def fast_hist(pred, label, n):
+    print(n)
     k = (label >= 0) & (label < n)
     return np.bincount(
         n * label[k].astype(int) + pred[k], minlength=n ** 2).reshape(n, n)
 
 
 def per_class_iou(hist):
+    print(hist)
     return np.diag(hist) / (hist.sum(1) + hist.sum(0) - np.diag(hist))
 
 
 object_colors = [
     'k',  # 0 background
-    'm',  # 1 oil_bottle
-    'w',  # 2 fluid_bottle
-    'c',  # 3 oilfilter
-    'g',  # 4 funnel
-    'b',  # 5 engine
-    'r',  # 6 blue_funnel
-    'orange',  # 7 tissue_box
-    'brown',  # 8 drill
-    'lime',  # 9 cracker_box
-    'yellow'   # 10 spam
+    'm',  # 1 box
+    'w',  # 2 bottle
+    'c',  # 3 cola_can
+    'g',  # 4 power_bank
 ]
 cmap = colors.ListedColormap(object_colors)
 

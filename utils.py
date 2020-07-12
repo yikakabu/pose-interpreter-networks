@@ -6,16 +6,10 @@ from pycocotools.coco import COCO
 
 all_object_colors = [
     'k',  # 0 background
-    'm',  # 1 oil_bottle
-    'w',  # 2 fluid_bottle
-    'c',  # 3 oilfilter
-    'g',  # 4 funnel
-    'b',  # 5 engine
-    'r',  # 6 blue_funnel
-    'orange',  # 7 tissue_box
-    'brown',  # 8 drill
-    'lime',  # 9 cracker_box
-    'yellow'   # 10 spam
+    'm',  # 1 box
+    'w',  # 2 bottle
+    'c',  # 3 cola_can
+    'g',  # 4 power_bank
 ]
 all_object_colors = [colors.to_rgb(object_color) for object_color in all_object_colors]
 

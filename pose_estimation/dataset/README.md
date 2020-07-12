@@ -68,7 +68,7 @@ redis-server
 Start postprocessing workers:
 
 ```bash
-python dist_workers.py --queue_name postprocess_queue --num_workers 5
+python dist_workers.py --queue_name postprocess_queue --num_workers 1
 ```
 
 Distribute the postprocessing jobs to workers:

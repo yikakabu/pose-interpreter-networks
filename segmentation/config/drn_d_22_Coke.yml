@@ -1,0 +1,28 @@
+data:
+    root: ../data/CokeDataset
+    ann_file: 20190517_Coke.json
+    train_all: false
+    batch_size: 16
+    workers: 4
+    classes: 5
+    class_names: [
+        background,
+        kinect,
+        bottle,
+        cola_can,
+        liquid_soap
+    ]
+arch: drn_d_22
+optimizer:
+    lr: 0.001
+    momentum: 0.99
+    weight_decay: 0.0001
+training:
+    logs_dir: logs/
+    checkpoints_dir: checkpoints/
+    experiment_name: drn_d_22_Coke
+    print_freq: 10
+    checkpoint_epochs: 50
+    epochs: 1000
+    log_dir:
+    resume:

@@ -6,16 +6,10 @@ from pycocotools.coco import COCO
 
 def run(coco, cat_ids, output_dir, num_examples):
     object_scales = {
-        1: 0.3,
-        2: 0.3,
-        3: 0.2,
-        4: 0.2,
-        5: 0.7,
-        6: 0.2,
-        7: 0.2,
-        8: 0.3,
-        9: 0.3,
-        10: 0.2,
+        1: 0.25,
+        2: 0.28,
+        3: 0.22,
+        4: 0.26,
     }
     
     cats = {cat['id']: cat for cat in coco.dataset['categories']}
@@ -41,9 +35,9 @@ def run(coco, cat_ids, output_dir, num_examples):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--oil_change_data_root', default='../../data/OilChangeDataset/', help='location of Oil Change dataset')
-parser.add_argument('--ann_file', default='20171103_OilChange.json')
-parser.add_argument('--cat_ids', default='1,2,4,5,6', help='comma-separated category ids')
+parser.add_argument('--coke_data_root', default='../../data/CokeDataset/', help='location of Coke dataset')
+parser.add_argument('--ann_file', default='20190517_Coke.json')
+parser.add_argument('--cat_ids', default='1,2,3,4', help='comma-separated category ids')
 parser.add_argument('--num_examples', type=int, default=1000000, help='number of examples per category')
 parser.add_argument('--output_dir', default='../data/cache/pose_lists/')
 args = parser.parse_args()
@@ -51,6 +45,6 @@ args = parser.parse_args()
 if not os.path.exists(args.output_dir):
     os.makedirs(args.output_dir)
 
-coco = COCO(os.path.join(args.oil_change_data_root, 'annotations', args.ann_file))
+coco = COCO(os.path.join(args.coke_data_root, 'annotations', args.ann_file))
 cat_ids = [int(c.strip()) for c in args.cat_ids.split(',')]
 run(coco, cat_ids, args.output_dir, args.num_examples)

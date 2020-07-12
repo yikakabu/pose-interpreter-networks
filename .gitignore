@@ -1,4 +1,10 @@
 *.pyc
 *.tar.gz
+*.png
+*.rdb
 .ipynb_checkpoints
 cache
+data/*Dataset/
+data/test/
+.vscode/
+data/renameimages/

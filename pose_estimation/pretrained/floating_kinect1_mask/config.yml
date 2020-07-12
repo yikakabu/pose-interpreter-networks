@@ -1,13 +1,12 @@
 data:
-    root: data/floating_kinect1_mask
-    num_subsets: 100
+    root: data/kinect1_mask
+    num_subsets: 10
     val_subset_num: 101
     objects: [
-        oil_bottle,
-        fluid_bottle,
-        funnel,
-        engine,
-        blue_funnel
+        kinect,
+        bottle,
+        cola_can,
+        liquid_soap
     ]
     batch_size: 32
 arch:
@@ -18,8 +17,8 @@ arch:
     num_position_fc_nodes: 256
     num_orientation_fc_layers: 1
     num_orientation_fc_nodes: 256
-    num_position_outputs: 15
-    num_orientation_outputs: 20
+    num_position_outputs: 12
+    num_orientation_outputs: 16
 loss: points # l1 | posecnn | points_simple | points
 optimizer:
     lr: 0.01

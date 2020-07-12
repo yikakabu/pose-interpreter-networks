@@ -1,0 +1,14 @@
+1.分割部分和pose部分分开训练，可以端到端验证和推断
+2.json结构：
+    {
+        “info”：{}，
+        “camera”:[{},...,],
+        “licenses”:[{},...,],
+        "image":[{"license":,"file_name":,"coco_url":,"height":,"width":,"date_captured":,"camera_id":,"flickr_url":"","id":},...,]
+        "annotations":[{"segmentation":{"counts":,"size":[]},"area":,"pose":{"position":{},"orientation":{}},"bbox":[],"category_id":,"id":,},...,]
+        "categories":[{"supercategory":,"mesh":,"id":,"name":},...,]
+    }
+3.segmentation下的两个预训练模型有什么区别？  训练集和测试集划分不同
+4.bbox参数：left up coordinate and width and height
+5.segmentation network 用十类目标训练
+6.pose interperter 用五类目标训练

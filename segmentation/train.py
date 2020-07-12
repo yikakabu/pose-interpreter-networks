@@ -92,6 +92,7 @@ def validate(val_loader, model, criterion):
             acc.update(utils.accuracy(output, target), input.size(0))
 
             _, pred = output.max(1)
+            #print(pred.cpu().data.numpy().flatten(),target.cpu().numpy().flatten(), cfg.data.classes)
             hist += utils.fast_hist(pred.cpu().data.numpy().flatten(), target.cpu().numpy().flatten(), cfg.data.classes)
 
             batch_time.update(time.time() - end)
@@ -187,6 +188,8 @@ def main(cfg):
         train_dataset = datasets.Dataset(cfg.data.root, 'train_' + cfg.data.ann_file, 'train', train_transforms)
     val_dataset = datasets.Dataset(
         cfg.data.root, 'val_' + cfg.data.ann_file, 'val', val_transforms)
+    print(train_dataset.__len__())
+    print(val_dataset.__len__())
     train_loader = torch.utils.data.DataLoader(
         train_dataset, batch_size=cfg.data.batch_size, shuffle=True, num_workers=cfg.data.workers, pin_memory=True)
     val_loader = torch.utils.data.DataLoader(
