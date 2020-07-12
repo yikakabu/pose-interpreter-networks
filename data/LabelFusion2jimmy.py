@@ -1,3 +1,8 @@
+"""
+use this file to make a single_object dataset of ChargePile
+2019/04/16 wrote by Huo
+"""
+
 import os
 import json
 import scipy.io as sio
@@ -56,7 +61,7 @@ def json_image_ann(images_set):
 		im_dic = {}
 		ann_dic = {}
 		img = cv2.imread(os.path.join(imagepath, item))
-		#height, width, _ = im.shape
+		#height, width, _ = img.shape
 		im_dic["license"] = 0
 		im_dic["file_name"] = item
 		im_dic["coco_url"] = ""
@@ -134,12 +139,14 @@ def dump_json(image_set):
 	return result
 
 if __name__ == "__main__":
-	#rgblist = get_file_list(totalfilepath, '_rgb', imagepath)
-	#depthlist = get_file_list(totalfilepath, 'epth', depthpath)
+
 	#labellist
 	#shutil.copytree(sourcefilepath1, totalfilepath) 
 	#renameall(sourcefilepath2, totalfilepath)
 	#remove_color_list(totalfilepath)
+	#rgblist = get_file_list(totalfilepath, '_rgb', imagepath)
+	#depthlist = get_file_list(totalfilepath, 'epth', depthpath)
+	
 	#print(rgblist)
 	#print(len(rgblist))
 	images = os.listdir(imagepath)
