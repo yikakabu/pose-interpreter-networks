@@ -1,6 +1,6 @@
 *.pyc
 *.tar.gz
-*.png
+!doc/
 *.rdb
 .ipynb_checkpoints
 cache

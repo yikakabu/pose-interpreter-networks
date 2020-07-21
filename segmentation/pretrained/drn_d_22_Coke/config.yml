@@ -1,6 +1,6 @@
 data:
     root: ../data/CokeDataset
-    ann_file: 20190425_Coke.json
+    ann_file: 20190517_Coke.json
     train_all: false
     batch_size: 16
     classes: 5

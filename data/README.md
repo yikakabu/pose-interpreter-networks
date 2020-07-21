@@ -31,3 +31,34 @@ Object Index | Object Name
 `2` | `funnel`
 `3` | `engine`
 `4` | `blue_funnel`
+-----
+<br>
+<br>
+
+# Coke Dataset
+
+See [dataset_overview.ipynb](dataset_overview.ipynb) for an overview of this dataset.
+
+## Object IDs
+
+Object IDs are used as labels in our segmentation models.
+
+Object ID | Object Name
+-|-
+`0` | `background`
+`1` | `kinect`,     
+`2` | `bottle`
+`3` | `cola_can`
+`4` | `liquid_soap`
+
+## Object Indices
+
+We train pose interpreter networks on the following four objects. Object indices are used to indicate which of the four objects a particular pose estimate corresponds to.
+
+Object Index | Object Name
+-|-
+`0` | `background`
+`1` | `kinect`,     
+`2` | `bottle`
+`3` | `cola_can`
+`4` | `liquid_soap`
